@@ -1,0 +1,12 @@
+type DemoData @loadModel(id: "$BASEID") {
+    id: ID!
+}
+
+type Tags @createModel(accountRelation: LIST, description: "A simple data with tag")
+    @createIndex(fields: [{ path: "tag" }]) {
+    tag: String! @string(minLength: 1, maxLength: 100)
+    creator: StreamID! @documentReference(model: "DemoData")
+    demoData: DemoData! @relationDocument(property: "creator")
+}
+
+

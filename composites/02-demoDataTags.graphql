@@ -1,0 +1,7 @@
+type Tags @loadModel(id: "$TAGID") {
+  id: ID!
+}
+
+type DemoData @loadModel(id: "$BASEID") {
+  tags: [Tags] @relationFrom(model: "Tags", property: "creator")
+}

@@ -1,0 +1,4 @@
+type DemoData @createModel(accountRelation: SINGLE, description: "A simple data"){
+  data1: String! @string(minLength: 1, maxLength: 100)
+  data2: String! @string(minLength: 1, maxLength: 100)
+}
