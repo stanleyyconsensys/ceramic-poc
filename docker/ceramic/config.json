@@ -1,0 +1,37 @@
+{
+    "anchor": {
+      "auth-method": "did"
+    },
+    "http-api": {
+      "cors-allowed-origins": [
+        ".*"
+      ],
+      "admin-dids": ["did:key:{YOUR_ADMIN_DID}"]
+    },
+    "ipfs": {
+        "mode": "remote",
+        "host": "http://ipfs:5001"
+    },
+    "logger": {
+      "log-level": 2,
+      "log-to-files": false
+    },
+    "metrics": {
+      "metrics-exporter-enabled": false
+    },
+    "network": {
+      "name": "testnet-clay"
+    },
+    "node": {
+      "privateSeedUrl": "inplace:ed25519#{YOUR_PRIVATE_KEY}"
+    },
+    "state-store": {
+      "mode": "fs",
+      "local-directory": "/root/.ceramic/statestore/"
+    },
+    "indexing": {
+      "db": "postgres://postgres:postgres@postgres:5432/ceramic",
+      "allow-queries-before-historical-sync": true,
+      "enable-historical-sync": false
+    }
+  }

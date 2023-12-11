@@ -1,21 +1,21 @@
 # ComposeDB Example App instructions
 
-Due to the nature of the Ceramic Daemon certain files must be updated to work with your local machine. Please follow the following directions carefully to ensure functionality.
+## Get DiD key
 
+1. Run `npm install -g @composedb/cli` to install composedb cli 
+2. Run `npx composedb did:generate-private-key` to generate a PRIVATE_KEY
+3. Run `composedb did:from-private-key PRIVATE_KEY` to generate a ADMIN_DID
+
+## Setup Docker ENV
+
+1. Open `./docker/ceramic/config.json`
+2. Replace `{YOUR_ADMIN_DID}` with the generated ADMIN_DID
+3. Replace `{YOUR_PRIVATE_KEY}` with the generated PRIVATE_KEY
+4. Run `docker compose up` to start the psql, ipfs and the cermaic node
+5. the psql will start at port `5432`, the ipfs will start at port `5001` and the cermaic node will start at port `7007`
+
+## Setup Cleint App
 1. Run `npm install` to install the packages
-2. Start the development server with `npm run dev` once. You may continue to use this command if you'd like however it will close all Ceramic connections at the first error. It is recommended that once your node is configured to index the required models that you run `npm run ceramic` & `npm run nextDev` separately to avoid this eager quitting.
+2. Start the development server with `npm run dev` once.
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-4. Enjoy this demo application!
-
-## Learn More
-
-Upgrade this project to claynet to see other developer's posts! Check out wheel to install ceramic / composeDB locally:
-
-https://github.com/ceramicstudio/wheel
-
-To learn more about Ceramic please visit the following links
-
-- [Ceramic Documentation](https://developers.ceramic.network/learn/welcome/) - Learn more about the Ceramic Ecosystem.
-- [ComposeDB](https://composedb.js.org/) - Details on how to use and develop with ComposeDB!
-
-You can check out [Create Ceramic App repo](https://github.com/ceramicstudio/create-ceramic-app) and provide us with your feedback or contributions!
+8. Enjoy this demo application!

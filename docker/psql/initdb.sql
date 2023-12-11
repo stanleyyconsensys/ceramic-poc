@@ -1,0 +1,2 @@
+CREATE DATABASE ceramic;
+GRANT ALL PRIVILEGES ON DATABASE ceramic TO postgres;
